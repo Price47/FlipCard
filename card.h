@@ -1,5 +1,8 @@
 //
-// Created by Price on 2/2/17.
+// Card class which creates a single card. Each card is a node,
+// with a pointer to the previous and next card in the order
+// of whatever deck it's in. The pointers remain null untill
+// the card is part of a deck.
 //
 
 #ifndef FLIPCARD_CARD_H
@@ -23,15 +26,14 @@ class Card{
         void setNext(Card *c);
         Card *getNext() const;
         Card *getPrev() const;
-
 private:
         int value;
         Suit suit;
         Card *next = NULL;
         Card *prev = NULL;
-
 };
 
+// constructors //
 Card::Card(){}
 
 Card::Card(int value, Suit suit){
@@ -39,6 +41,7 @@ Card::Card(int value, Suit suit){
     setSuit(suit);
 }
 
+// getters and setters //
 int Card::getValue() const {
     return value;
 }
@@ -71,6 +74,7 @@ void Card::setNext(Card *c) {
     Card::next = c;
 }
 
+// map value of suit enumeration to it's card value //
 string Card::SuitMap() {
     switch(getSuit()){
         case Clubs: return "Clubs";
@@ -81,6 +85,7 @@ string Card::SuitMap() {
     }
 }
 
+// map value of card to it's face value //
 string Card::CardMap(){
     switch(getValue()){
         case 0: return "Ace";
@@ -100,6 +105,7 @@ string Card::CardMap(){
     }
 }
 
+// overloaded operator to print out formatted card //
 ostream& operator<<(ostream& os, Card c){
     os << "[ " << c.CardMap() << " of " << c.SuitMap() << " ]" << endl;
     return os;
