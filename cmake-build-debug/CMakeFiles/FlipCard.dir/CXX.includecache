@@ -1,0 +1,38 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/rockstar645/CLionProjects/FlipCard/card.h
+
+/Users/rockstar645/CLionProjects/FlipCard/deck.h
+algorithm
+-
+cstdlib
+-
+ctime
+-
+vector
+-
+random
+-
+card.h
+/Users/rockstar645/CLionProjects/FlipCard/card.h
+
+/Users/rockstar645/CLionProjects/FlipCard/main.cpp
+iostream
+-
+algorithm
+-
+cstdlib
+-
+ctime
+-
+card.h
+/Users/rockstar645/CLionProjects/FlipCard/card.h
+deck.h
+/Users/rockstar645/CLionProjects/FlipCard/deck.h
+
