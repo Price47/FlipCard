@@ -86,6 +86,9 @@
 		<Unit filename="/Users/rockstar645/CLionProjects/FlipCard/deck.h">
 			<Option target="FlipCard"/>
 		</Unit>
+		<Unit filename="/Users/rockstar645/CLionProjects/FlipCard/gameState.h">
+			<Option target="FlipCard"/>
+		</Unit>
 		<Unit filename="/Users/rockstar645/CLionProjects/FlipCard/main.cpp">
 			<Option target="FlipCard"/>
 		</Unit>

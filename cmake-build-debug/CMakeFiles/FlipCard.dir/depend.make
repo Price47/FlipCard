@@ -3,5 +3,6 @@
 
 CMakeFiles/FlipCard.dir/main.cpp.o: ../card.h
 CMakeFiles/FlipCard.dir/main.cpp.o: ../deck.h
+CMakeFiles/FlipCard.dir/main.cpp.o: ../gameState.h
 CMakeFiles/FlipCard.dir/main.cpp.o: ../main.cpp
 

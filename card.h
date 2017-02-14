@@ -16,6 +16,7 @@ class Card{
     public:
         Card();
         Card(int value, Suit suit);
+        Card(int value, Suit suit, int id);
         int getValue() const;
         void setValue(int value);
         Suit getSuit() const;
@@ -26,8 +27,14 @@ class Card{
         void setNext(Card *c);
         Card *getNext() const;
         Card *getPrev() const;
+        void setId(int n);
+        int getId() const;
+        void flip();
+        bool getFlipped();
 private:
         int value;
+        int id = 0;
+        bool flipped = false;
         Suit suit;
         Card *next = NULL;
         Card *prev = NULL;
@@ -39,6 +46,12 @@ Card::Card(){}
 Card::Card(int value, Suit suit){
     setValue(value);
     setSuit(suit);
+}
+
+Card::Card(int value, Suit suit, int id){
+    setValue(value);
+    setSuit(suit);
+    setId(id);
 }
 
 // getters and setters //
@@ -74,6 +87,22 @@ void Card::setNext(Card *c) {
     Card::next = c;
 }
 
+int Card::getId() const{
+    return Card::id;
+}
+
+void Card::setId(int n){
+    Card::id = n;
+}
+
+void Card::flip(){
+    Card::flipped = !Card::flipped;
+}
+
+bool Card::getFlipped() {
+    return Card::flipped;
+}
+
 // map value of suit enumeration to it's card value //
 string Card::SuitMap() {
     switch(getSuit()){
@@ -107,7 +136,12 @@ string Card::CardMap(){
 
 // overloaded operator to print out formatted card //
 ostream& operator<<(ostream& os, Card c){
-    os << "[ " << c.CardMap() << " of " << c.SuitMap() << " ]" << endl;
+    if(c.getFlipped()) {
+        os << "[ " << c.CardMap() << " of " << c.SuitMap() << " ]";
+    }
+    else{
+        os << "[ " << c.getId() << " ]";
+    }
     return os;
 }
 #endif //FLIPCARD_CARD_H

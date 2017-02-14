@@ -11,7 +11,20 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="85eb6b30-3553-48f3-b424-2765d50748c4" name="Default" comment="" />
+    <list default="true" id="85eb6b30-3553-48f3-b424-2765d50748c4" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/gameState.h" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/main.cpp.o" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/FlipCard" afterPath="$PROJECT_DIR$/cmake-build-debug/FlipCard" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/CMakeLists.txt" afterPath="$PROJECT_DIR$/CMakeLists.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/card.h" afterPath="$PROJECT_DIR$/card.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/CXX.includecache" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/CXX.includecache" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/depend.internal" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/depend.internal" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/depend.make" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/FlipCard.dir/depend.make" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/cmake-build-debug/FlipCard.cbp" afterPath="$PROJECT_DIR$/cmake-build-debug/FlipCard.cbp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/deck.h" afterPath="$PROJECT_DIR$/deck.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/main.cpp" afterPath="$PROJECT_DIR$/main.cpp" />
+    </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -29,10 +42,22 @@
       <file leaf-file-name="deck.h" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/deck.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="447">
-              <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+            <state relative-caret-position="372">
+              <caret line="136" column="21" lean-forward="false" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
               <folding>
                 <element signature="e#112#132#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gameState.h" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameState.h">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="162">
+              <caret line="137" column="33" lean-forward="false" selection-start-line="137" selection-start-column="32" selection-end-line="137" selection-end-column="33" />
+              <folding>
+                <element signature="e#98#115#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -41,8 +66,8 @@
       <file leaf-file-name="card.h" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/card.h">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="645">
-              <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+            <state relative-caret-position="-468">
+              <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -51,8 +76,8 @@
       <file leaf-file-name="main.cpp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+            <state relative-caret-position="192">
+              <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -66,10 +91,19 @@
     <findStrings>
       <find>SUIT</find>
       <find>cout</find>
+      <find>return</find>
+      <find>change =</find>
+      <find>points</find>
     </findStrings>
     <replaceStrings>
       <replace>Suit</replace>
+      <replace>change =</replace>
+      <replace>change +=</replace>
+      <replace>getPoints()</replace>
     </replaceStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -79,6 +113,7 @@
         <option value="$PROJECT_DIR$/cmake-build-debug/deck.h" />
         <option value="$PROJECT_DIR$/suitMap.h" />
         <option value="$PROJECT_DIR$/card.h" />
+        <option value="$PROJECT_DIR$/gameState.h" />
         <option value="$PROJECT_DIR$/main.cpp" />
         <option value="$PROJECT_DIR$/deck.h" />
       </list>
@@ -91,7 +126,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="38" />
+    <option name="x" value="44" />
     <option name="y" value="23" />
     <option name="width" value="1086" />
     <option name="height" value="777" />
@@ -334,24 +369,27 @@
       <updated>1486079640420</updated>
       <workItem from="1486079641801" duration="16318000" />
       <workItem from="1486159043702" duration="1035000" />
-      <workItem from="1486420485698" duration="9434000" />
+      <workItem from="1486420485698" duration="9667000" />
+      <workItem from="1486526366100" duration="383000" />
+      <workItem from="1486864819466" duration="3311000" />
+      <workItem from="1487092858147" duration="13620000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="26787000" />
+    <option name="totallyTimeSpent" value="44334000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="38" y="23" width="1086" height="777" extended-state="1" />
-    <editor active="true" />
+    <frame x="44" y="23" width="1086" height="777" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28450704" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="CMake" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32846716" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329927" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
@@ -372,10 +410,96 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <option name="time" value="6" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/deck.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1185">
+          <caret line="79" column="22" lean-forward="true" selection-start-line="79" selection-start-column="22" selection-end-line="79" selection-end-column="22" />
+          <folding>
+            <element signature="e#112#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameState.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="690">
+          <caret line="46" column="38" lean-forward="false" selection-start-line="46" selection-start-column="38" selection-end-line="46" selection-end-column="38" />
+          <folding>
+            <element signature="e#98#115#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="750">
+          <caret line="50" column="16" lean-forward="false" selection-start-line="50" selection-start-column="16" selection-end-line="50" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="21" column="20" lean-forward="false" selection-start-line="21" selection-start-column="20" selection-end-line="21" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deck.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#112#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/deck.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2505">
+          <caret line="167" column="18" lean-forward="false" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+          <folding>
+            <element signature="e#112#132#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/card.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="645">
+          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/deck.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -446,9 +570,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="1224" column="0" lean-forward="false" selection-start-line="1224" selection-start-column="0" selection-end-line="1224" selection-end-column="0" />
-          <folding>
-            <element signature="e#44043#44068#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -456,7 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="475" column="0" lean-forward="false" selection-start-line="475" selection-start-column="0" selection-end-line="475" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -464,22 +584,31 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="127">
           <caret line="2814" column="92" lean-forward="false" selection-start-line="2814" selection-start-column="92" selection-end-line="2814" selection-end-column="92" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/card.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="645">
-          <caret line="43" column="25" lean-forward="false" selection-start-line="43" selection-start-column="25" selection-end-line="43" selection-end-column="25" />
+        <state relative-caret-position="-468">
+          <caret line="93" column="24" lean-forward="false" selection-start-line="93" selection-start-column="24" selection-end-line="93" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameState.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="137" column="33" lean-forward="false" selection-start-line="137" selection-start-column="32" selection-end-line="137" selection-end-column="33" />
+          <folding>
+            <element signature="e#98#115#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" column="27" lean-forward="false" selection-start-line="19" selection-start-column="27" selection-end-line="19" selection-end-column="27" />
+        <state relative-caret-position="192">
+          <caret line="15" column="27" lean-forward="false" selection-start-line="15" selection-start-column="27" selection-end-line="15" selection-end-column="27" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
@@ -488,8 +617,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/deck.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="447">
-          <caret line="167" column="18" lean-forward="true" selection-start-line="167" selection-start-column="18" selection-end-line="167" selection-end-column="18" />
+        <state relative-caret-position="372">
+          <caret line="136" column="21" lean-forward="false" selection-start-line="136" selection-start-column="21" selection-end-line="136" selection-end-column="21" />
           <folding>
             <element signature="e#112#132#0" expanded="true" />
           </folding>

@@ -19,7 +19,7 @@ public:
     Deck();
     Deck(int n);
     void printDeck();
-    void printDeckOrder();
+    void printDeckValues();
     Deck drawCards(int n);
     int getDeckSize() const;
     void setDeckSize(int deckSize);
@@ -31,6 +31,10 @@ public:
     vector<Card>  linkedListToVector();
     void vectorToLinkedList(vector<Card> vec);
     void shuffleDeck();
+    void shuffleDeckNTimes(int n);
+    Card *findCard(int n);
+    Card *deal();
+    void replace(Card *c);
 private:
     int deckSize = 52;
     Card *root = NULL;
@@ -65,21 +69,52 @@ void Deck::addCard(Card *c) {
     }
 }
 
+Card *Deck::deal(){
+    if(root) {
+        Card *c = new Card(root->getValue(), root->getSuit());
+        Card *old_root = root;
+        if (root->getNext() != NULL) {
+            root = root->getNext();
+        }
+        delete (old_root);
+        return c;
+    }
+    return NULL;
+}
+
+void Deck::replace(Card *c) {
+    last->setNext(c);
+    last = last->getNext();
+}
+
 // function to be used in part b, draw n cards from a deck and return as a
 // new deck //
 Deck Deck::drawCards(int n) {
     Deck d = Deck(n);
-    Card *c = new Card();
-    *c = *root;
-    d.addCard(c);
-    for(int i = 0; i < n-1; i++){
-        Card *c1 = new Card();
-        c = c->getNext();
-        *c1 = *c;
+    for(int i = 0; i < n; i++){
+        //Card *c1 = new Card();
+        Card *c1 = deal();
+        c1->setId(i);
         d.addCard(c1);
     }
     d.last->setNext(NULL);
     return d;
+}
+
+Card *Deck::findCard(int id){
+    Card *c = root;
+    while(c->getNext()!=NULL) {
+        if (c->getId() == id) {
+            return c;
+        }
+        else{
+            c=c->getNext();
+        }
+    }
+    if(c->getNext() == NULL && c->getId() == id){
+        return c;
+    }
+    return NULL;
 }
 
 void Deck::printDeck() {
@@ -90,6 +125,22 @@ void Deck::printDeck() {
             c = c->getNext();
         }
         cout << *getLast();
+    }
+}
+
+void Deck::printDeckValues() {
+    if(getRoot()) {
+        Card *c = getRoot();
+        while (c->getNext() != NULL) {
+            c->flip();
+            cout << "( " << c->getId() << " )" << *c << endl;
+            c->flip();
+            c = c->getNext();
+        }
+        Card *last = getLast();
+        last->flip();
+        cout << "( " << c->getId() << " )" << *last << endl;
+        last->flip();
     }
 }
 
@@ -163,6 +214,11 @@ void Deck::shuffleDeck() {
     vectorToLinkedList(deck);
 }
 
+void Deck::shuffleDeckNTimes(int n){
+    for(int i=0;i<n;i++){
+        shuffleDeck();
+    }
+}
 // overloaded operator to print deck //
 ostream& operator<<(ostream& os, Deck d){
     d.printDeck();

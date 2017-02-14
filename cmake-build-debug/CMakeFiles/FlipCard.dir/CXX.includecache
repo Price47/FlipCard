@@ -22,6 +22,12 @@ random
 card.h
 /Users/rockstar645/CLionProjects/FlipCard/card.h
 
+/Users/rockstar645/CLionProjects/FlipCard/gameState.h
+deck.h
+/Users/rockstar645/CLionProjects/FlipCard/deck.h
+card.h
+/Users/rockstar645/CLionProjects/FlipCard/card.h
+
 /Users/rockstar645/CLionProjects/FlipCard/main.cpp
 iostream
 -
@@ -35,4 +41,6 @@ card.h
 /Users/rockstar645/CLionProjects/FlipCard/card.h
 deck.h
 /Users/rockstar645/CLionProjects/FlipCard/deck.h
+gameState.h
+/Users/rockstar645/CLionProjects/FlipCard/gameState.h
 
