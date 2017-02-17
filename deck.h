@@ -27,22 +27,25 @@ public:
     void setRoot(Card *root);
     Card *getLast() const;
     void setLast(Card *last);
-    void addCard(Card *c);
-    vector<Card>  linkedListToVector();
-    void vectorToLinkedList(vector<Card> vec);
-    void shuffleDeck();
     void shuffleDeckNTimes(int n);
     Card *findCard(int n);
     Card *deal();
     void replace(Card *c);
+    void removeCard(Card *c);
+    void destroy();
 private:
     int deckSize = 52;
     Card *root = NULL;
     Card *last = NULL;
     void randomizeVector(vector<Card> &vec);
-
+    void shuffleDeck();
+    void addCard(Card *c);
+    vector<Card>  linkedListToVector();
+    void vectorToLinkedList(vector<Card> vec);
 };
 
+// primary constructor. Creates 13 cards for 4 suits
+// (ace - king, club - spade)
 Deck::Deck() {
     for(int i = Clubs; i < Spades+1; i++){
         for(int j = 0; j < 13; j++){
@@ -69,6 +72,8 @@ void Deck::addCard(Card *c) {
     }
 }
 
+// return top card of the deck and remove that card from
+// the deck
 Card *Deck::deal(){
     if(root) {
         Card *c = new Card(root->getValue(), root->getSuit());
@@ -83,6 +88,8 @@ Card *Deck::deal(){
 }
 
 void Deck::replace(Card *c) {
+    c->setPrev(last);
+    c->setNext(NULL);
     last->setNext(c);
     last = last->getNext();
 }
@@ -101,6 +108,9 @@ Deck Deck::drawCards(int n) {
     return d;
 }
 
+// locate a specific card in the deck. In this case, the card
+// being located is the the face down card chosen by the user.
+// returns that card.
 Card *Deck::findCard(int id){
     Card *c = root;
     while(c->getNext()!=NULL) {
@@ -117,6 +127,18 @@ Card *Deck::findCard(int id){
     return NULL;
 }
 
+// remove card c and bridge the gab between in the linked list
+void Deck::removeCard(Card *c) {
+    if(c->getNext()!= NULL & c->getPrev()!=NULL){
+        Card *prev = c->getPrev();
+        Card *next = c->getNext();
+
+        next->setPrev(prev);
+        prev->setNext(next);
+        delete(c);
+    }
+}
+
 void Deck::printDeck() {
     if(getRoot()) {
         Card *c = getRoot();
@@ -128,6 +150,10 @@ void Deck::printDeck() {
     }
 }
 
+// Display the values of card, even if they are "flipped over."
+// Only used in the main function to output the cards in the
+// 24 card hand, and the remaining cards in the deck,
+// as per assignment instructions
 void Deck::printDeckValues() {
     if(getRoot()) {
         Card *c = getRoot();
@@ -217,6 +243,18 @@ void Deck::shuffleDeck() {
 void Deck::shuffleDeckNTimes(int n){
     for(int i=0;i<n;i++){
         shuffleDeck();
+    }
+}
+
+// iterate through deck, and delete all pointers
+void Deck::destroy() {
+    if(root){
+        Card *c = root;
+        while(c->getNext()!=NULL){
+            c = c->getNext();
+            delete(c->getPrev());
+        }
+        delete(last);
     }
 }
 // overloaded operator to print deck //

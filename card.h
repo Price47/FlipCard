@@ -31,6 +31,11 @@ class Card{
         int getId() const;
         void flip();
         bool getFlipped();
+
+        void operator=(const Card& c){
+            value = c.getValue();
+            suit = c.getSuit();
+        }
 private:
         int value;
         int id = 0;
@@ -134,7 +139,8 @@ string Card::CardMap(){
     }
 }
 
-// overloaded operator to print out formatted card //
+// overloaded operator to print out formatted card. If card is face down,
+// only display the id to select it so the user cannot see what it is.
 ostream& operator<<(ostream& os, Card c){
     if(c.getFlipped()) {
         os << "[ " << c.CardMap() << " of " << c.SuitMap() << " ]";

@@ -1,5 +1,8 @@
 //
-// Created by Price on 2/11/17.
+// Class to handle the game state and points,
+// and an overloaded operator to print the game state.
+// Also handles the display of the game, 24 card face down on the
+// table that the user can choose to flip
 //
 
 #ifndef FLIPCARD_GAMESTATE_H
@@ -31,6 +34,8 @@ private:
     bool resolveChoice(string s);
     bool resolveCardChoice(int n);
     void pointMap(Card c);
+    void endGame();
+    bool verifyResponse(string s);
 };
 
 gameState::gameState() {}
@@ -47,7 +52,7 @@ void gameState::setDeck(Deck d) {
 Deck gameState::getDeck(){
     return gameState::deck;
 }
-
+// print 6 card to a row
 void gameState::printRow(){
     Deck d = getDeck();
     Card *c = deckPosition;
@@ -63,6 +68,7 @@ void gameState::printRow(){
     }
 }
 
+// print 4 rows of card
 void gameState::printGame() {
     for(int i =0; i<4; i++){
         printRow();
@@ -90,6 +96,11 @@ void gameState::setPoints(double points) {
     gameState::points=points;
 }
 
+// assign point values to cards: 2-6, lose all points;
+// 7, lose half points; 8-10 no change in points;
+// jack-king add 5 points; ace add 10 points (note
+// ace is 0). After performing point changes, add 1 point
+// for a heart
 void gameState::pointMap(Card c){
     switch(c.getValue()){
         case 0: setPoints(getPoints() + 10); break;
@@ -98,7 +109,7 @@ void gameState::pointMap(Card c){
         case 3: setPoints(0); break;
         case 4: setPoints(0); break;
         case 5: setPoints(0); break;
-        case 6: setPoints(47); break;
+        case 6: setPoints(((getPoints())/2)); break;
         case 7: setPoints(getPoints()); break;
         case 8: setPoints(getPoints()); break;
         case 9: setPoints(getPoints()); break;
@@ -113,9 +124,12 @@ void gameState::pointMap(Card c){
     }
 }
 
+
 bool gameState::resolveCardChoice(int n){
     return(n<=deck.getDeckSize());
 }
+
+// Read which card to flip, then flip it and change gamestate points
 void gameState::playTurn(){
     int cardChoice;
     cout << "Which card would you like to flip?\n";
@@ -126,18 +140,56 @@ void gameState::playTurn(){
     }
     Card *c = deck.findCard(cardChoice);
     if(c){
-        pointMap(*c);
-        c->flip();
+        if(!c->getFlipped()) {
+            pointMap(*c);
+            c->flip();
+        }
+        else{
+            cout << "That card has already been flipped\n";
+        }
     }
 
 }
 
+// end game, print score, and exit with code 0
+void gameState::endGame() {
+    cout << "Congratualtions, your final score is " << getPoints() << " point(s)\n";
+    deck.destroy();
+    exit(0);
+}
+
+bool gameState::verifyResponse(string s){
+    bool verified = (s == "y" | s == "Y" | s == "N" | s == "n");
+    if(!verified){
+        cout << "Response must be Y, y, N, or n\n";
+        return false;
+    }
+    return true;
+}
+
+// see if user wants to end the game, or continue flipping
 void gameState::setupTurn(){
-    string drawCard;
-    cout << "You can flip a card, or stop now. would you like to pick another card? (Y/N)\n";
-    cin >> drawCard;
-    if(!resolveChoice(drawCard)){
-        exit(0);
+    string drawCard, finish;
+    bool finishedSetup = false;
+    while(!finishedSetup) {
+        cout << "You can flip a card, or stop now. would you like to pick another card? (Y/N)\n";
+        cin >> drawCard;
+        if(verifyResponse(drawCard)) {
+            if (!resolveChoice(drawCard)) {
+                cout << "Are you sure you want to exit? (Y/N)\n";
+                cin >> finish;
+                if (resolveChoice(finish)) {
+                    endGame();
+                } else {
+                    continue;
+                }
+            } else {
+                finishedSetup = true;
+            }
+        }
+        else{
+            finishedSetup = false;
+        }
     }
     playTurn();
 }
