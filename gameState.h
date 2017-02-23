@@ -36,6 +36,7 @@ private:
     void pointMap(Card c);
     void endGame();
     bool verifyResponse(string s);
+    int readInt(string output, string errorMsg);
 };
 
 gameState::gameState() {}
@@ -129,28 +130,6 @@ bool gameState::resolveCardChoice(int n){
     return(n<=deck.getDeckSize());
 }
 
-// Read which card to flip, then flip it and change gamestate points
-void gameState::playTurn(){
-    int cardChoice;
-    cout << "Which card would you like to flip?\n";
-    cin >> cardChoice;
-    while(!resolveCardChoice(cardChoice)){
-        cout << "That's an invalid choice. Please enter a valid card number.\n";
-        cin >> cardChoice;
-    }
-    Card *c = deck.findCard(cardChoice);
-    if(c){
-        if(!c->getFlipped()) {
-            pointMap(*c);
-            c->flip();
-        }
-        else{
-            cout << "That card has already been flipped\n";
-        }
-    }
-
-}
-
 // end game, print score, and exit with code 0
 void gameState::endGame() {
     cout << "Congratualtions, your final score is " << getPoints() << " point(s)\n";
@@ -165,6 +144,39 @@ bool gameState::verifyResponse(string s){
         return false;
     }
     return true;
+}
+
+// error handling for bad int input. If cin >> integer is a string, it causes
+// an infinite loop and breaks the program. This prevents such a loop
+int gameState::readInt(string output, string errorMsg) {
+    int i;
+    while (std::cout << output << endl && !(std::cin >> i)) {
+        std::cin.clear(); //clear bad input flag
+        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n'); //discard input
+        std::cout << errorMsg << endl;
+    }
+    return i;
+}
+
+// Read which card to flip, then flip it and change gamestate points
+void gameState::playTurn(){
+    int cardChoice;
+    cardChoice = readInt("Which card would you like to flip?", "Input must be an integer");
+    while(!resolveCardChoice(cardChoice)){
+        cout << "That's an invalid choice. Please enter a valid card number.\n";
+        cardChoice = readInt("Which card would you like to flip?", "Input must be an integer");
+    }
+    Card *c = deck.findCard(cardChoice);
+    if(c){
+        if(!c->getFlipped()) {
+            pointMap(*c);
+            c->flip();
+        }
+        else{
+            cout << "That card has already been flipped\n";
+        }
+    }
+
 }
 
 // see if user wants to end the game, or continue flipping
